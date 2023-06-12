@@ -7,7 +7,7 @@ Bitte Added jeweils die Features die ihr implementiert habt in den Commit, sowie
 
 TODO:
 Tim: 
--ADD Desert AREA
 -ADD Sound
+-ADD Jump and Run Puzzle
+-ADD Final AREA
 
-Test
