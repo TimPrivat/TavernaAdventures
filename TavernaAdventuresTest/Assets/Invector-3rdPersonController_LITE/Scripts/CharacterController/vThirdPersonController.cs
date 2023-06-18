@@ -114,6 +114,8 @@ namespace Invector.vCharacterController
 
         public virtual void Jump()
         {
+            //angriff = true;
+            //angriff = false;
             // trigger jump behaviour
             jumpCounter = jumpTimer;
             isJumping = true;
@@ -123,6 +125,24 @@ namespace Invector.vCharacterController
                 animator.CrossFadeInFixedTime("Jump", 0.1f);
             else
                 animator.CrossFadeInFixedTime("JumpMove", .2f);
+            
+        }
+
+        public virtual void Attack()
+        {
+            //angriff = true;
+            animator.CrossFadeInFixedTime("Angriff", 0.1f);
+            //angriff = false;
+            // trigger jump behaviour
+            /*jumpCounter = jumpTimer;
+            isJumping = true;
+
+            // trigger jump animations
+            if (input.sqrMagnitude < 0.1f)
+                animator.CrossFadeInFixedTime("Jump", 0.1f);
+            else
+                animator.CrossFadeInFixedTime("JumpMove", .2f);
+            */
         }
     }
 }

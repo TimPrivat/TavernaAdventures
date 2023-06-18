@@ -2103,6 +2103,7 @@ GameObject:
   - component: {fileID: 645109735}
   - component: {fileID: 645109734}
   - component: {fileID: 645109733}
+  - component: {fileID: 645109739}
   - component: {fileID: 645109732}
   - component: {fileID: 645109738}
   m_Layer: 0
@@ -2159,6 +2160,7 @@ MonoBehaviour:
   jumpInput: 32
   strafeInput: 323
   sprintInput: 304
+  animation_TEST: {fileID: 645109739}
   rotateCameraXInput: Mouse X
   rotateCameraYInput: Mouse Y
   cc: {fileID: 0}
@@ -2271,6 +2273,22 @@ MonoBehaviour:
   - {fileID: 1744003700}
   Leben: 3
   Spieler: {fileID: 645109731}
+--- !u!111 &645109739
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645109731}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: -4529440302839410946, guid: 39da7618d46a72544b70c24a5e430ecf, type: 3}
+  m_Animations:
+  - {fileID: -4529440302839410946, guid: 39da7618d46a72544b70c24a5e430ecf, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &662702867
 GameObject:
   m_ObjectHideFlags: 0

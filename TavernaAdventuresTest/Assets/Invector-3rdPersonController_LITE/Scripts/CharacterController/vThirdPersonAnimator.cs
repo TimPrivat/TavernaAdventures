@@ -21,6 +21,7 @@ namespace Invector.vCharacterController
             animator.SetBool(vAnimatorParameters.IsSprinting, isSprinting);
             animator.SetBool(vAnimatorParameters.IsGrounded, isGrounded);
             animator.SetFloat(vAnimatorParameters.GroundDistance, groundDistance);
+            animator.SetBool(vAnimatorParameters.Angriff, angriff);
 
             if (isStrafing)
             {
@@ -53,6 +54,7 @@ namespace Invector.vCharacterController
     public static partial class vAnimatorParameters
     {
         public static int InputHorizontal = Animator.StringToHash("InputHorizontal");
+        public static int Angriff = Animator.StringToHash("Angriff");
         public static int InputVertical = Animator.StringToHash("InputVertical");
         public static int InputMagnitude = Animator.StringToHash("InputMagnitude");
         public static int IsGrounded = Animator.StringToHash("IsGrounded");
