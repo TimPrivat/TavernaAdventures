@@ -10,17 +10,33 @@ public class Enemy_Script : MonoBehaviour
     public float range_en;
     public int Leben = 3;
     public int Schaden = 1;
-    public float attck_cooldown = 2f;
+    public float attck_cooldown = 1.5f;
     bool cooldown = false;
     public float targetTime;
+    public Animator anim = null;
 
     void FixedUpdate()
     {
         dis = Vector3.Distance(player.position, this.gameObject.transform.position);
-        if (dis < range_en)
+        if (dis < range_en && !cooldown)
         {
+            setMoving(true);
             //Debug.Log(dis + this.gameObject.name);
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.LookAt(player.position);
+
+        }
+        else
+        {
+            setMoving(false);
+        }
+    }
+
+    void setMoving(bool mov)
+    {
+        if(anim != null)
+        {
+            anim.SetBool("Moving", mov);
         }
     }
 
@@ -28,13 +44,13 @@ public class Enemy_Script : MonoBehaviour
     {
         if(collision.gameObject.name == "sword_epic")
         {
-            Debug.Log("ENEMY KILLED");
+            Debug.Log("sword_epicsword_epicsword_epicsword_epicsword_epicsword_epicsword_epic");
             Leben -= 3;
             die();
         }
     }
 
-    void die()
+    public void die()
     {
         if(Leben <= 0)
         {

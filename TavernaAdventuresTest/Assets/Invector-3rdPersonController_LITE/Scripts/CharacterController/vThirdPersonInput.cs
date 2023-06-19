@@ -13,6 +13,9 @@ namespace Invector.vCharacterController
         public KeyCode strafeInput = KeyCode.Tab;
         public KeyCode sprintInput = KeyCode.LeftShift;
         public Animation animation_TEST;
+        public Schwert_Script ss = null;
+        public float attack_Time = 3f;
+        float timer;
 
         [Header("Camera Input")]
         public string rotateCameraXInput = "Mouse X";
@@ -53,7 +56,6 @@ namespace Invector.vCharacterController
         protected virtual void InitilizeController()
         {
             cc = GetComponent<vThirdPersonController>();
-
             if (cc != null)
                 cc.Init();
         }
@@ -81,6 +83,7 @@ namespace Invector.vCharacterController
             StrafeInput();
             JumpInput();
             lmbInput();
+            timer -= Time.deltaTime;
         }
 
         public virtual void MoveInput()
@@ -123,7 +126,11 @@ namespace Invector.vCharacterController
         protected virtual void lmbInput()
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
                 cc.Attack();
+                ss.Schädlich = true;
+                timer = attack_Time;
+            }
         }
 
         protected virtual void SprintInput()

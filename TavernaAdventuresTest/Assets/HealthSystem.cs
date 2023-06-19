@@ -66,17 +66,19 @@ private void Schaden(int vSchaden = 1)
         void OnCollisionStay(Collision collision)
         {
             //Enemy other = collision.gameObject.GetComponent<>();
-            Debug.Log("Collsion with: " + collision.GetType() + collision.gameObject.name);
+            //Debug.Log("Collsion with: " + collision.GetType() + collision.gameObject.name);
             if(collision.gameObject.tag == "Enemy")
             {
                 
                 try
                 {
                     Enemy_Script getScript = collision.gameObject.GetComponent<Enemy_Script>();
-                Debug.Log(getScript.targetTime);
+                    getScript.anim.SetTrigger("Hit");
+                    //Debug.Log(getScript.targetTime);
                 if (!getScript.getCooldown())
                 {
                     Schaden(getScript.Schaden);
+                    
                     getScript.setCooldown(true);
                 }
                 } catch
