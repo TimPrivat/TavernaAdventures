@@ -11,12 +11,13 @@ public class HealthSystem : MonoBehaviour
 private GameObject[] _Herzen;
         private int _Leben;
         public GameObject Spieler;
+    public GameObject PlayerSpawner;
 
-private void Schaden()
+private void Schaden(int vSchaden = 1)
         {
             if(this.Leben > 1)
             {
-                this.Leben -= 1;
+                this.Leben -= vSchaden;
                 Debug.Log("Leben neu: " + this.Leben);
             } else
             {
@@ -60,16 +61,28 @@ private void Schaden()
         {
             Debug.Log("RESPAWN");
             this.Leben = 3;
-            this.transform.position = new Vector3(0, 0, 0);
+        this.transform.position = PlayerSpawner.transform.position;
         }
-
-        void OnCollisionEnter(Collision collision)
+        void OnCollisionStay(Collision collision)
         {
             //Enemy other = collision.gameObject.GetComponent<>();
             Debug.Log("Collsion with: " + collision.GetType() + collision.gameObject.name);
             if(collision.gameObject.tag == "Enemy")
             {
-                this.Schaden();
+                
+                try
+                {
+                    Enemy_Script getScript = collision.gameObject.GetComponent<Enemy_Script>();
+                Debug.Log(getScript.targetTime);
+                if (!getScript.getCooldown())
+                {
+                    Schaden(getScript.Schaden);
+                    getScript.setCooldown(true);
+                }
+                } catch
+                {
+
+                }
             }
         }
 
