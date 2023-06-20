@@ -34,24 +34,24 @@ private void Schaden(int vSchaden = 1)
             switch (Leben)
             {
                 case 0:
-                    Herzen[0].active = false;
-                    Herzen[1].active = false;
-                    Herzen[2].active = false;
+                    Herzen[0].SetActive(false);
+                    Herzen[1].SetActive(false);
+                    Herzen[2].SetActive(false);
                     break;
                 case 1:
-                    Herzen[0].active = true;
-                    Herzen[1].active = false;
-                    Herzen[2].active = false;
+                    Herzen[0].SetActive(true);
+                    Herzen[1].SetActive(false);
+                    Herzen[2].SetActive(false);
                     break;
                 case 2:
-                    Herzen[0].active = true;
-                    Herzen[1].active = true;
-                    Herzen[2].active = false;
+                    Herzen[0].SetActive(true);
+                    Herzen[1].SetActive(true);
+                    Herzen[2].SetActive(false);
                     break;
                 case 3:
-                    Herzen[0].active = true;
-                    Herzen[1].active = true;
-                    Herzen[2].active = true;
+                    Herzen[0].SetActive(true);
+                    Herzen[1].SetActive(true);
+                    Herzen[2].SetActive(true);
                     break;
 
             }
@@ -73,7 +73,11 @@ private void Schaden(int vSchaden = 1)
                 try
                 {
                     Enemy_Script getScript = collision.gameObject.GetComponent<Enemy_Script>();
-                    getScript.anim.SetTrigger("Hit");
+                    if(getScript.anim != null)
+                    {
+                        getScript.anim.SetTrigger("Hit");
+                    }
+                    
                     //Debug.Log(getScript.targetTime);
                 if (!getScript.getCooldown())
                 {
@@ -92,9 +96,9 @@ private void Schaden(int vSchaden = 1)
     void Start()
     {
         Leben = 3;
-        Herzen[0].active = true;
-        Herzen[1].active = true;
-        Herzen[2].active = true;
+        Herzen[0].SetActive(true);
+        Herzen[1].SetActive(true);
+        Herzen[2].SetActive(true);
     }
 
     // Update is called once per frame

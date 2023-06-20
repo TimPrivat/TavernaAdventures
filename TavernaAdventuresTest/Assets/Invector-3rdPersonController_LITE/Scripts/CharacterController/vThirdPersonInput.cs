@@ -13,7 +13,7 @@ namespace Invector.vCharacterController
         public KeyCode strafeInput = KeyCode.Tab;
         public KeyCode sprintInput = KeyCode.LeftShift;
         public Animation animation_TEST;
-        public Schwert_Script ss = null;
+        //public Schwert_Script ss = null;
         public float attack_Time = 3f;
         float timer;
 
@@ -128,7 +128,7 @@ namespace Invector.vCharacterController
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 cc.Attack();
-                ss.Schädlich = true;
+                //ss.Schädlich = true;
                 timer = attack_Time;
             }
         }

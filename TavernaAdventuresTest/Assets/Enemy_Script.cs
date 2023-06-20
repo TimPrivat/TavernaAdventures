@@ -4,10 +4,9 @@ using UnityEngine;
 public class Enemy_Script : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 0.1f;
-    private bool t = false;
+    public float moveSpeed = 2f;
     private float dis;
-    public float range_en;
+    public float range_en = 10f;
     public int Leben = 3;
     public int Schaden = 1;
     public float attck_cooldown = 1.5f;
@@ -23,7 +22,7 @@ public class Enemy_Script : MonoBehaviour
             setMoving(true);
             //Debug.Log(dis + this.gameObject.name);
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-            transform.LookAt(player.position);
+            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
 
         }
         else
