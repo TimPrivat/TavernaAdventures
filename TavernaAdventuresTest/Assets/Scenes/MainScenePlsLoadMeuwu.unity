@@ -914,6 +914,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1058931069070918722, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8887711872706140998, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
       propertyPath: m_Name
       value: Klippenboss Variant
@@ -2008,6 +2012,47 @@ Transform:
   m_Father: {fileID: 1592213733}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &323195191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1310685626560767962, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &323195192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1836251551240109408, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &323195193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323195191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b3f1c9c71996a40b4dda5730f380e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stone: {fileID: 323195192}
+  falls: 0
+  faling: 0
+  jumpBackUp: 0
+  counter: 0
+  oldYPosition: 0
+--- !u!65 &323195197
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323195191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.1, y: 5.61, z: 4.60087}
+  m_Center: {x: -0.18580794, y: 1.2152596, z: 0.31670773}
 --- !u!1001 &324182876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3868,7 +3913,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645109731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1622.56, y: 129.26111, z: -1436.7042}
+  m_LocalPosition: {x: -79.280396, y: 59.253296, z: 474.43}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5173,6 +5218,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 113
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &835098974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1058931069070918733, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &835098975 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 430591426555322103, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &835098979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835098974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b3f1c9c71996a40b4dda5730f380e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stone: {fileID: 835098975}
+  falls: 0
+  faling: 0
+  jumpBackUp: 0
+  counter: 0
+  oldYPosition: 0
+--- !u!65 &835098980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 835098974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.080143, y: 4.16, z: 4.60087}
+  m_Center: {x: -0.18580794, y: 1.2152634, z: 0.31669247}
 --- !u!1001 &846595312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11801,6 +11887,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14de40ad977c3054ab5f055c0e68ef9d, type: 3}
+--- !u!1 &1885963265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3614782954185608193, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1885963266 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4134754559743399611, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
+  m_PrefabInstance: {fileID: 100554065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1885963270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885963265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b3f1c9c71996a40b4dda5730f380e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stone: {fileID: 1885963266}
+  falls: 0
+  faling: 0
+  jumpBackUp: 0
+  counter: 0
+  oldYPosition: 0
+--- !u!65 &1885963271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885963265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.3633027, y: 3.46, z: 3.85}
+  m_Center: {x: -0.19833243, y: 1.3708392, z: 0.06703967}
 --- !u!1001 &1890128770
 PrefabInstance:
   m_ObjectHideFlags: 0
