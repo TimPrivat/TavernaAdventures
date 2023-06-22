@@ -5,34 +5,37 @@ using UnityEngine;
 public class MusicTrigger : MonoBehaviour
 {
 
-    public BoxCollider tavernenCollider;
-    public GameObject player;
+    public AudioClip outside;
+    public AudioClip inside;
+    
     public AudioSource source;
-
-    public AudioClip taverne;
-    public AudioClip wald;
-    public AudioClip traumland;
-    public AudioClip klippenboss;
-
     // Start is called before the first frame update
     void Start()
     {
-        source.clip = taverne;
-        source.Play();
+        
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
         
     }
 
+    private void OnTriggerEnter(Collider collide) {
 
-    private void OnTriggerEnter(Collider dick) {
-        if(dick == tavernenCollider) {
-            source.Stop();
-            source.clip = wald;
-            source.Play();
-        }
+        source.Stop();
+        source.clip = inside;
+        source.Play();
+
     }
+
+    private void OnTriggerExit(Collider collide) {
+        source.Stop();
+        source.clip = outside;
+        source.Play();
+    }
+
 }
