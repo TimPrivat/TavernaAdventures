@@ -3012,7 +3012,7 @@ MonoBehaviour:
     gek\xE4mpft werden. Du solltest so schnell wie m\xF6glich dahin, um es nicht
     zu verpassen, aber sei bitte vorsichtig! "
   - 'Burghard: Ich habe nichts mehr zu verlieren, Tarmir. Ich werde alles geben! '
-  textSpeed: 0.01
+  textSpeed: 0.02
   enter: {fileID: 1626322092}
   player: {fileID: 645109731}
 --- !u!114 &426674797
@@ -4217,6 +4217,7 @@ GameObject:
   - component: {fileID: 645109733}
   - component: {fileID: 645109732}
   - component: {fileID: 645109738}
+  - component: {fileID: 645109739}
   m_Layer: 0
   m_Name: Burghardt
   m_TagString: Player
@@ -4394,6 +4395,21 @@ MonoBehaviour:
   Leben: 3
   Spieler: {fileID: 645109731}
   PlayerSpawner: {fileID: 831478122}
+--- !u!114 &645109739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645109731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807dacf8bfdc84b49bbfe8dc941c1690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstKey: 0
+  secondKey: 0
+  mainKey: 0
 --- !u!1 &652941791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5424916643889789208, guid: c07771b239750d448b6ae922aa6c4c02, type: 3}
