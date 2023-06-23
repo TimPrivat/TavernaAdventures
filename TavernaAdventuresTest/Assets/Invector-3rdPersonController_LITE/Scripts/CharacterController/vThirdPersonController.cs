@@ -4,6 +4,20 @@ namespace Invector.vCharacterController
 {
     public class vThirdPersonController : vThirdPersonAnimator
     {
+        bool cooldown = false;
+        public float timeRemaining = 1;
+        public GameObject Schwert;
+
+        private void Update()
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            } else
+            {
+                Schwert.GetComponent<BoxCollider>().enabled = false;
+            }
+        }
         public virtual void ControlAnimatorRootMotion()
         {
             if (!this.enabled) return;
@@ -131,7 +145,13 @@ namespace Invector.vCharacterController
         public virtual void Attack()
         {
             //angriff = true;
-            animator.CrossFadeInFixedTime("Angriff", 0.1f);
+            if(timeRemaining < 0)
+            {
+                timeRemaining = 1;
+                Schwert.GetComponent<BoxCollider>().enabled = true;
+                animator.CrossFadeInFixedTime("Angriff", 0.1f);
+                timeRemaining = 1;
+            }
             //angriff = false;
             // trigger jump behaviour
             /*jumpCounter = jumpTimer;
