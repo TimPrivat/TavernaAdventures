@@ -9,6 +9,7 @@ public class MusicTrigger : MonoBehaviour
     public AudioClip inside;
     
     public AudioSource source;
+    public CapsuleCollider player;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,16 +27,20 @@ public class MusicTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collide) {
 
-        source.Stop();
-        source.clip = inside;
-        source.Play();
+        if(collide == player) {
+            source.Stop();
+            source.clip = inside;
+            source.Play();
+        }
 
     }
 
     private void OnTriggerExit(Collider collide) {
-        source.Stop();
-        source.clip = outside;
-        source.Play();
+         if(collide == player) {
+            source.Stop();
+            source.clip = outside;
+            source.Play();
+        }
     }
 
 }
