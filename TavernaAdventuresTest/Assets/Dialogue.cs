@@ -52,7 +52,7 @@ public class Dialogue : MonoBehaviour
             index++;
             text.text = string.Empty;
             StartCoroutine(TypeLine());
-        } else if (index < 9 && player.firstKey == true) {
+        } else if (index < 9) {
             index++;
             text.text = string.Empty;
             StartCoroutine(TypeLine());
