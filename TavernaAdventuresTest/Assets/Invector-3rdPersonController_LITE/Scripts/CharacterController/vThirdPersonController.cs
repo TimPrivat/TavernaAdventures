@@ -7,6 +7,8 @@ namespace Invector.vCharacterController
         bool cooldown = false;
         public float timeRemaining = 1;
         public GameObject Schwert;
+        public string[] Collected_Itemes = new string[5];
+        public int itemscount = 0;
 
         private void Update()
         {
