@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArenaKeyScript : MonoBehaviour{
+public class KeyKlippe : MonoBehaviour{
 
     public GameObject Key;
     public GameObject player;
@@ -26,9 +26,9 @@ public class ArenaKeyScript : MonoBehaviour{
 
         if(collide.gameObject == player) {
               // Dashier in den Collider vom Second Key packen
-            player.GetComponent<QuestVariables>().secondKey=true;
-            UnityEngine.Debug.Log("Arena Complete");
-            UnityEngine.Debug.Log(player.GetComponent<QuestVariables>().secondKey);
+            player.GetComponent<QuestVariables>().firstKey=true;
+            //UnityEngine.Debug.Log("Arena Complete");
+            //UnityEngine.Debug.Log(player.GetComponent<QuestVariables>().secondKey);
             Key.SetActive(false);
             trigger.SetActive(true);
         }
