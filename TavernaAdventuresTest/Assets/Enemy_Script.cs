@@ -55,9 +55,10 @@ public class Enemy_Script : MonoBehaviour
     {
         if(Leben <= 0)
         {
-            Destroy(this.gameObject);
+           
             times_died++;
             Debug.Log("ENEMY KILLED");
+            Destroy(this.gameObject);
         }
     }
 

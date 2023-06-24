@@ -69,13 +69,15 @@ private void Schaden(int vSchaden = 1)
             //Debug.Log("Collsion with: " + collision.GetType() + collision.gameObject.name);
             if(collision.gameObject.tag == "Enemy")
             {
-                
+               // UnityEngine.Debug.Log("Enemy has been Hit");
                 try
                 {
                     Enemy_Script getScript = collision.gameObject.GetComponent<Enemy_Script>();
                     if(getScript.anim != null)
                     {
                         getScript.anim.SetTrigger("Hit");
+                       
+
                     }
                     
                     //Debug.Log(getScript.targetTime);

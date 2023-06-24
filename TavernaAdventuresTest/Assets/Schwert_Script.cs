@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Schwert_Script : MonoBehaviour
 {
-    public bool Schädlich = false;
+    public bool Schadlich = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +18,14 @@ public class Schwert_Script : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
+    { 
+         Debug.Log("ENEMY KILLED");
+
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("ENEEMY HIZZZT!!!!!!!!!!!!!");
            Enemy_Script es = collision.gameObject.GetComponent<Enemy_Script>();
-            if(Schädlich == true)
+            if(Schadlich == true)
             {
                 es.Leben = 0;
                 es.die();

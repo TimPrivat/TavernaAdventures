@@ -18,9 +18,10 @@ public class Schwert_Controller : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("COLSSLSLSLSLS");
         if(collision.gameObject.tag == "Enemy")
         {
+            Enemy_Script.times_died++;
+            Debug.Log("ENEMY KILLED");
             Destroy(collision.gameObject);
         }
         
