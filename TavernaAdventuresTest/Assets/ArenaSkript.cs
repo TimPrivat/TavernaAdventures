@@ -14,6 +14,8 @@ public class ArenaSkript : MonoBehaviour
     public int GegnerAnzahl;
     public GameObject player;
 
+    public GameObject Key;
+
     public GameObject enemy;
     // Start is called before the first frame update
 
@@ -25,18 +27,32 @@ public class ArenaSkript : MonoBehaviour
     public int counterGegner = 0;
     public int spawnRate = 0;
     public int spawnRateTwo;
+
+    
+     private int diedAtStart;
+
+    private bool complete=false;
+    private bool keySpawened=false;
+    
+    
     void Start()
     {
         spawnRateTwo  = r.Next(200,500);
+        diedAtStart= Enemy_Script.times_died;
+        UnityEngine.Debug.Log(diedAtStart +"  "+   GegnerAnzahl);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+
         if(called) {
 
-            UnityEngine.Debug.Log("Aufgerufen");
-            
+          //  UnityEngine.Debug.Log("Aufgerufen");
+          
 
             if(counterGegner < GegnerAnzahl) {
 
@@ -60,14 +76,32 @@ public class ArenaSkript : MonoBehaviour
 
                 //int SecondsToWait = r.Next(5, 15);
             } 
+         
+        }
+
+
+           if(Enemy_Script.times_died >= diedAtStart+GegnerAnzahl){complete=true;  } 
             
 
+
+        if(complete&&!keySpawened){
+
+            //Hier Key Spawnen
+            Key.SetActive(true);
+            
+
+            keySpawened=true;
+            
+          
         }
+
     }
 
 
-    public Boolean called = false;
+    public bool called = false;
     
+
+
 
     private void OnTriggerEnter(Collider collide)
     {

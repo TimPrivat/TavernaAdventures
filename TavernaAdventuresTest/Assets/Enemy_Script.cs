@@ -14,6 +14,8 @@ public class Enemy_Script : MonoBehaviour
     public float targetTime;
     public Animator anim = null;
 
+    public static int times_died=0;
+
     void FixedUpdate()
     {
         dis = Vector3.Distance(player.position, this.gameObject.transform.position);
@@ -54,6 +56,7 @@ public class Enemy_Script : MonoBehaviour
         if(Leben <= 0)
         {
             Destroy(this.gameObject);
+            times_died++;
             Debug.Log("ENEMY KILLED");
         }
     }
