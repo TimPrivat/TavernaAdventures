@@ -17,7 +17,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         text.text = string.Empty;
-        StartDialogue();   
+        StartDialogue();
     }
 
     // Update is called once per frame
@@ -56,8 +56,8 @@ public class Dialogue : MonoBehaviour
             index++;
             text.text = string.Empty;
             StartCoroutine(TypeLine());
-        
         } else {
+            
             gameObject.SetActive(false);
         }
     }
