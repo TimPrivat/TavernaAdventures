@@ -11,6 +11,10 @@ namespace Invector.vCharacterController
         public GameObject player;
         public GameObject startMenu;
 
+         public AudioClip Traumwelt;
+         public AudioClip Taverne;
+         public AudioSource source;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -18,6 +22,11 @@ namespace Invector.vCharacterController
             startMenu.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+           
+            source.Stop();
+            source.clip = Taverne;
+            source.Play();
+
         }
 
 
@@ -29,7 +38,13 @@ namespace Invector.vCharacterController
             player.GetComponent<HealthSystem>().Respawn();
 
             player.transform.position = new Vector3(-1626, 122, -1437);
+         //Debug
+          //player.transform.position = new Vector3(677, 60, 511);
             startMenu.SetActive(false);
+            source.Stop();
+            source.clip = Traumwelt;
+            source.Play();
+            Cursor.lockState = CursorLockMode.Locked;
 
         }
 
@@ -37,7 +52,7 @@ namespace Invector.vCharacterController
         {
             Debug.Log("GAME WILL BE QUIT");
             Application.Quit();
-            UnityEditor.EditorApplication.isPlaying = false;
+        //    UnityEditor.EditorApplication.isPlaying = false;
         }
 
     }
