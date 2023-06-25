@@ -56,6 +56,10 @@ public class Dialogue : MonoBehaviour
             index++;
             text.text = string.Empty;
             StartCoroutine(TypeLine());
+        } else if (index < 13 && player.GetComponent<QuestVariables>().secondKey == true) {
+            index++;
+            text.text = string.Empty;
+            StartCoroutine(TypeLine());
         } else {
             
             gameObject.SetActive(false);

@@ -2,13 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestVariables : MonoBehaviour
+public class Endscreen : MonoBehaviour
 {
-
-    public bool firstKey = false;
-    public bool  secondKey = false;
-    public bool mainKey = false;
-
+    public GameObject endscreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +14,9 @@ public class QuestVariables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mainKey = firstKey && secondKey;
+        
+    }
+    void OnTriggerEnter(Collider collide) {
+        endscreen.SetActive(true);
     }
 }
