@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+namespace Invector.vCharacterController
+{
 public class HealthSystem : MonoBehaviour
 {
 
@@ -22,8 +23,10 @@ private void Schaden(int vSchaden = 1)
             } else
             {
                 if(this.Leben == 1)
-                {   
+                {
+                    Herzen[0].SetActive(false);
                     gameOver.SetActive(true);
+                    Spieler.GetComponent<vThirdPersonInput>().Active_Movement = false;
                     Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
                     //this.Respawn();
@@ -66,7 +69,8 @@ private void Schaden(int vSchaden = 1)
         {   
             Debug.Log("RESPAWN");
             this.Leben = 3;
-        this.transform.position = PlayerSpawner.transform.position;
+            this.transform.position = PlayerSpawner.transform.position;
+            Spieler.GetComponent<vThirdPersonInput>().Active_Movement = true;
         }
         void OnCollisionStay(Collision collision)
         {
@@ -113,7 +117,5 @@ private void Schaden(int vSchaden = 1)
     {
         
     }
-
-   
-
+}
 }

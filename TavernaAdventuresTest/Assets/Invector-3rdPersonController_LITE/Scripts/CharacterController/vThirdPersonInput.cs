@@ -15,6 +15,7 @@ namespace Invector.vCharacterController
         public Animation animation_TEST;
         //public Schwert_Script ss = null;
         public float attack_Time = 3f;
+        public bool Active_Movement = true;
         float timer;
 
         [Header("Camera Input")]
@@ -77,12 +78,15 @@ namespace Invector.vCharacterController
 
         protected virtual void InputHandle()
         {
-            MoveInput();
-            CameraInput();
-            SprintInput();
-            StrafeInput();
-            JumpInput();
-            lmbInput();
+            if (Active_Movement)
+            {
+                MoveInput();
+                CameraInput();
+                SprintInput();
+                StrafeInput();
+                JumpInput();
+                lmbInput();
+            }
             timer -= Time.deltaTime;
         }
 

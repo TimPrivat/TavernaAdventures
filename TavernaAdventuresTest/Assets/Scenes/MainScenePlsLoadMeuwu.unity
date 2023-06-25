@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.111874215, g: 0.2772792, b: 0.44081363, a: 1}
+  m_IndirectSpecularColor: {r: 0.111732006, g: 0.27664745, b: 0.44069266, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5778,6 +5778,7 @@ MonoBehaviour:
   sprintInput: 304
   animation_TEST: {fileID: 0}
   attack_Time: 3
+  Active_Movement: 1
   rotateCameraXInput: Mouse X
   rotateCameraYInput: Mouse Y
   cc: {fileID: 0}
@@ -11244,7 +11245,7 @@ MonoBehaviour:
   moveSpeed: 3
   range_en: 7
   Leben: 6
-  Schaden: 1
+  Schaden: 0
   attck_cooldown: 1.5
   targetTime: 0
   anim: {fileID: 1116055270}
@@ -12225,7 +12226,7 @@ MonoBehaviour:
   moveSpeed: 3
   range_en: 7
   Leben: 6
-  Schaden: 1
+  Schaden: 0
   attck_cooldown: 1.5
   targetTime: 0
   anim: {fileID: 1210412284}
@@ -19835,15 +19836,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1622
+      value: -1691.92
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 115
+      value: 138.77
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1436.86
+      value: -1685.02
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalRotation.w
