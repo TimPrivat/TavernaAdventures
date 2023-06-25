@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainScenePlsLoadMeuwu.unity
+    guid: 752a79829e9073f448bce0961b2f0af2
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f5c58192e1908fd4b89dd20f5cc0e693, type: 2}
