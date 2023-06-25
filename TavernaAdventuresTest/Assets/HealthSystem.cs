@@ -5,11 +5,11 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
 
-
+    public GameObject gameOver;
     public GameObject[] Herzen;
         public int Leben = 3;
-private GameObject[] _Herzen;
-        private int _Leben;
+public GameObject[] _Herzen;
+        public int _Leben;
         public GameObject Spieler;
     public GameObject PlayerSpawner;
 
@@ -22,14 +22,19 @@ private void Schaden(int vSchaden = 1)
             } else
             {
                 if(this.Leben == 1)
-                { this.Respawn();} 
+                {   
+                    gameOver.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    //this.Respawn();
+                    } 
                 else
                 { Debug.LogError("FEHLER: " + this.Leben); }
             }
             refresh_UI();
         }
 
-        void refresh_UI()
+        public void refresh_UI()
         {
             switch (Leben)
             {
@@ -57,8 +62,8 @@ private void Schaden(int vSchaden = 1)
             }
         }
 
-        private void Respawn()
-        {
+        public void Respawn()
+        {   
             Debug.Log("RESPAWN");
             this.Leben = 3;
         this.transform.position = PlayerSpawner.transform.position;
@@ -108,5 +113,7 @@ private void Schaden(int vSchaden = 1)
     {
         
     }
+
+   
 
 }
