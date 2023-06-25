@@ -13,15 +13,21 @@ public class StartMenuScript : MonoBehaviour
     void Start()
     {
        this.gameObject.SetActive(false);
-       startMenu.SetActive(false);
+       startMenu.SetActive(true);
+       Cursor.lockState = CursorLockMode.None;
+       Cursor.visible = true;
     }
 
     
     public void StartButton() {
         Debug.Log("START BUTTON clicked");
         this.gameObject.SetActive(false);
-        player.GetComponent<HealthSystem>().Respawn();
         player.GetComponent<HealthSystem>().refresh_UI();
+        player.GetComponent<HealthSystem>().Respawn();
+        
+        player.transform.position = new Vector3(-1626, 122, -1437);
+        startMenu.SetActive(false);
+
     }
 
     public void QuitEverythingButton() {

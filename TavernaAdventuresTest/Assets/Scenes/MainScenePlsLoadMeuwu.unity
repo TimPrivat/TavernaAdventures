@@ -7780,7 +7780,7 @@ GameObject:
   - component: {fileID: 831478123}
   m_Layer: 0
   m_Name: PlayerSpawn
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16454,7 +16454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667231038788762177, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6118570415780788865, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_Controller
@@ -19835,7 +19835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1626
+      value: -1622
       objectReference: {fileID: 0}
     - target: {fileID: 146837255144481019, guid: 1b7b502c1d13936449cf9aafc517a0c6, type: 3}
       propertyPath: m_LocalPosition.y
