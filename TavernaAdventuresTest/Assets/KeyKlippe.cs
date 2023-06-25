@@ -6,6 +6,7 @@ public class KeyKlippe : MonoBehaviour{
 
     public GameObject Key;
     public GameObject player;
+    public GameObject TP_Pos;
     public GameObject trigger;
 
 
@@ -25,12 +26,16 @@ public class KeyKlippe : MonoBehaviour{
     private void OnTriggerEnter(Collider collide) {
 
         if(collide.gameObject == player) {
+
+            player.transform.position = TP_Pos.transform.position;
               // Dashier in den Collider vom Second Key packen
             player.GetComponent<QuestVariables>().firstKey=true;
             //UnityEngine.Debug.Log("Arena Complete");
             //UnityEngine.Debug.Log(player.GetComponent<QuestVariables>().secondKey);
             Key.SetActive(false);
             trigger.SetActive(true);
+            //player.transform.position = Vector3.zero;
+            
         }
 
     }

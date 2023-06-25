@@ -6,7 +6,8 @@ namespace Invector.vCharacterController
     public class Collectable_Script : MonoBehaviour
     {
         public string NAME_ITEM = "Empty";
-        public Vector3 new_Location;
+
+         public GameObject TP_Pos;
         string[] it;
         public GameObject PLAYER;
         // Start is called before the first frame update
@@ -28,10 +29,9 @@ namespace Invector.vCharacterController
                 it = collision.gameObject.GetComponent<vThirdPersonController>().Collected_Itemes;
                 it[collision.gameObject.GetComponent<vThirdPersonController>().itemscount] = NAME_ITEM;
                 collision.gameObject.GetComponent<vThirdPersonController>().Collected_Itemes = it;
-                if(new_Location != new Vector3())
-                {
-                    PLAYER.transform.position = new_Location;
-                }
+             
+                   PLAYER.transform.position = TP_Pos.transform.position;
+             
                 Destroy(this);
 
 

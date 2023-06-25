@@ -7,13 +7,11 @@ public class Schwert_Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+       }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +22,5 @@ public class Schwert_Controller : MonoBehaviour
             Debug.Log("ENEMY KILLED");
             Destroy(collision.gameObject);
         }
-        
-    }
+      }
 }

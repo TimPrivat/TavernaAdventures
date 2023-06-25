@@ -6,6 +6,7 @@ public class ArenaKeyScript : MonoBehaviour{
 
     public GameObject Key;
     public GameObject player;
+     public GameObject TP_Pos;
     public GameObject trigger;
 
 
@@ -31,6 +32,7 @@ public class ArenaKeyScript : MonoBehaviour{
             UnityEngine.Debug.Log(player.GetComponent<QuestVariables>().secondKey);
             Key.SetActive(false);
             trigger.SetActive(true);
+            player.transform.position = TP_Pos.transform.position;
         }
 
     }
