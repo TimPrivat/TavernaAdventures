@@ -8,6 +8,7 @@ public class QuestVariables : MonoBehaviour
     public bool firstKey = false;
     public bool  secondKey = false;
     public bool mainKey = false;
+    public bool done = false;
 
     // Start is called before the first frame update
     void Start()

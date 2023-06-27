@@ -11,6 +11,8 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     public TextMeshProUGUI enter;
     public GameObject player;
+    public GameObject dialogueTrigger;
+    public bool reactivated;
 
     private int index;
     // Start is called before the first frame update
@@ -23,6 +25,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(Input.GetKeyDown("return")) {
             if(text.text == lines[index]) {
                 NextLine();
@@ -31,6 +34,13 @@ public class Dialogue : MonoBehaviour
                 text.text = lines[index];
             }
         }
+        if(reactivated){
+            UnityEngine.Debug.Log(text.text);
+            NextLine();
+            UnityEngine.Debug.Log(text.text);
+        }  
+        reactivated = dialogueTrigger.activeSelf;
+        
     }
 
     void StartDialogue() {
@@ -60,9 +70,13 @@ public class Dialogue : MonoBehaviour
             index++;
             text.text = string.Empty;
             StartCoroutine(TypeLine());
+        } else if (index < 14 && player.GetComponent<QuestVariables>().done == true) {
+            index++;
+            text.text = string.Empty;
+            StartCoroutine(TypeLine());
         } else {
-            
             gameObject.SetActive(false);
+            UnityEngine.Debug.Log(text.text);
         }
     }
 }
